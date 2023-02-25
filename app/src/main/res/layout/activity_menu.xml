@@ -10,11 +10,9 @@
         android:id="@+id/imageButton3"
         android:layout_width="147dp"
         android:layout_height="147dp"
-        android:layout_marginTop="44dp"
         android:src="@android:drawable/btn_star"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton2"
-        app:layout_constraintTop_toBottomOf="@+id/pickText" />
+        tools:layout_editor_absoluteX="222dp"
+        tools:layout_editor_absoluteY="242dp" />
 
     <TextView
         android:id="@+id/MenuText"
@@ -38,28 +36,29 @@
         app:layout_constraintTop_toBottomOf="@+id/MenuText" />
 
     <ImageButton
-        android:id="@+id/avatarButton"
-        android:layout_width="80dp"
-        android:layout_height="74dp"
-        android:layout_marginTop="16dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/MenuText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="@drawable/avatar" />
+        android:id="@+id/imageButton"
+        android:layout_width="61dp"
+        android:layout_height="57dp"
+        tools:layout_editor_absoluteX="322dp"
+        tools:layout_editor_absoluteY="131dp"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="44dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pickText"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="242dp"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
