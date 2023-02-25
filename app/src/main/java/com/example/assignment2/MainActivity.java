@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
 
         System.out.println("test");
     }
-
     private void finishscreen() {
         this.finish();
     }

@@ -39,8 +39,8 @@
         android:id="@+id/imageButton"
         android:layout_width="61dp"
         android:layout_height="57dp"
-        tools:layout_editor_absoluteX="334dp"
-        tools:layout_editor_absoluteY="16dp"
+        tools:layout_editor_absoluteX="322dp"
+        tools:layout_editor_absoluteY="131dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageButton
@@ -51,11 +51,14 @@
         tools:layout_editor_absoluteY="242dp"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/signOutText"
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar"
+        android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:text="Sign Out [->"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
