@@ -8,20 +8,41 @@
 
     <ImageButton
         android:id="@+id/imageButton3"
-        android:layout_width="147dp"
-        android:layout_height="147dp"
-        android:src="@android:drawable/btn_star"
-        tools:layout_editor_absoluteX="222dp"
-        tools:layout_editor_absoluteY="242dp" />
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="24dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/numeracy"
+        android:background="#0000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pickText" />
+
+    <ImageButton
+        android:id="@+id/historyButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:adjustViewBounds="true"
+        android:background="#0000"
+        android:scaleType="centerInside"
+        android:src="@drawable/history"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pickText" />
 
     <TextView
         android:id="@+id/MenuText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="36dp"
         android:text="OC Quiz for Fun"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,7 +50,7 @@
         android:id="@+id/pickText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="80dp"
         android:text="Pick your quiz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,28 +58,15 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="61dp"
-        android:layout_height="57dp"
-        tools:layout_editor_absoluteX="322dp"
-        tools:layout_editor_absoluteY="131dp"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="48dp"
-        tools:layout_editor_absoluteY="242dp"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/materialToolbar"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp" />
+        android:layout_width="51dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="24dp"
+        android:background="#0000"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.661"
+        app:layout_constraintStart_toEndOf="@+id/MenuText"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/myavatar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

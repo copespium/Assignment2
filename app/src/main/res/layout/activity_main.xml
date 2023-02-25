@@ -10,20 +10,24 @@
         android:id="@+id/startingScreenText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="OC QUIZ FOR FUN"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.61" />
+        app:layout_constraintTop_toBottomOf="@+id/startingImage"
+        app:layout_constraintVertical_bias="0.183" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="271dp"
+        android:id="@+id/startingImage"
+        android:layout_width="207dp"
+        android:layout_height="261dp"
         android:layout_marginTop="120dp"
+        android:background="#0000"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="130dp"
         tools:srcCompat="@drawable/bulb" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

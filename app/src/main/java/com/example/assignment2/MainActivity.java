@@ -9,6 +9,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         Animation animation1;
         animation1 = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.fade_in);
-        ImageView q = (ImageView) findViewById(R.id.imageView);
+        ImageView q = (ImageView) findViewById(R.id.startingImage);
         TextView text = (TextView) findViewById(R.id.startingScreenText);
         q.startAnimation(animation);
         text.startAnimation(animation1);
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 // TODO Auto-generated method stub
-                Intent intent = new Intent(MainActivity.this, Home.class);
+                Intent intent = new Intent(MainActivity.this, Profile.class);
                 startActivity(intent);
                 finishscreen();
             }
