@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         };
         Timer t = new Timer();
         t.schedule(task, 3000);
-
+        System.out.println("test2");
         System.out.println("test");
     }
     private void finishscreen() {
