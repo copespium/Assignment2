@@ -32,10 +32,12 @@ public class Database {
     DatabaseReference questionAnswerRef = FirebaseDatabase.getInstance(" https://assignment2-fba50-default-rtdb.asia-southeast1.firebasedatabase.app")
             .getReference("QuestionAnswers");
 
-//    private static ArrayList<User> userList = new ArrayList<>();
+    private static ArrayList<User> userList = new ArrayList<>();
     private static ArrayList<Attempt> attemptList = new ArrayList<>();
 
     private static ArrayList<QuestionAnswer> questionAnswerList = new ArrayList<>();
+
+    private static User currentUser = new User();
 
     private static final Database ourInstance = new Database();
     public static Database getInstance() {
@@ -68,36 +70,40 @@ public class Database {
             // ...
         });
 
-//        usersRef.orderByValue().addChildEventListener(new ChildEventListener() {
-//            @Override
-//            public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
-//                User user = dataSnapshot.getValue(User.class);
-//                System.out.println("The " + dataSnapshot.getKey() + " user details is " + dataSnapshot.getValue());
-//                System.out.println("Username: " + user.getUserName() + "email: " + user.getEmail());
-//                users.add(user);
-//                System.out.println("@Printing all users: " + users);
-//            }
-//            @Override
-//            public void onChildChanged(DataSnapshot dataSnapshot, String prevChildKey) {}
-//
-//            @Override
-//            public void onChildRemoved(DataSnapshot dataSnapshot) {}
-//
-//            @Override
-//            public void onChildMoved(DataSnapshot dataSnapshot, String prevChildKey) {}
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {}
-//            // ...
-//        });
+        usersRef.orderByValue().addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
+                User user = dataSnapshot.getValue(User.class);
+                String UID = dataSnapshot.getKey();
+                //System.out.println("The " + dataSnapshot.getKey() + " user details is " + dataSnapshot.getValue());
+                //System.out.println("Username: " + user.getUserName() + "email: " + user.getEmail());
 
-        //generateQuestionPoolList();
-        //
+                if (userIsLoggedIn() && UID.equalsIgnoreCase(mAuth.getCurrentUser().getUid()))
+                    currentUser = user;
 
+                //userList.add(user);
+                //System.out.println("@Printing all users: " + userList);
+            }
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String prevChildKey) {}
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {}
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String prevChildKey) {}
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+            // ...
+        });
+
+        generateQuestionPoolList();
     }
 
     public void loadCurrentUserAttempts(){
 
+        //clear attempt list from previous user so can load attempt list for new logged in user
         attemptList.clear();
 
         attemptsRef.child(mAuth.getCurrentUser().getUid())
@@ -130,9 +136,9 @@ public class Database {
 
     //mAuth.signOut();
 
-//    public ArrayList<User> getUsers() {
-//        return users;
-//    }
+    public User getCurrentUser(){
+        return currentUser;
+    }
 
     public ArrayList<Attempt> getAttemptList() {
         return attemptList;
@@ -143,15 +149,16 @@ public class Database {
     }
 
     //adds to the database
-    public void addAttempt(String area, int point, String dateTime) {
+    public void addAttempt(String area, int point, String dateTime, String attemptNum) {
 
         Attempt attempt = new Attempt (area, point, dateTime);
 
         attemptsRef.child(mAuth.getCurrentUser().getUid())
+                .child(attemptNum)
                 .addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                attemptsRef.setValue(attempt);
+                attemptsRef.child(mAuth.getCurrentUser().getUid()).child(attemptNum).setValue(attempt);
             }
 
             @Override
@@ -163,20 +170,6 @@ public class Database {
 
     //adds to the database
     public void addQuestionAnswer(QuestionAnswer questionAnswer, String id) {
-
-//        questionAnswerRef.child(id).addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                questionAnswerRef.setValue(questionAnswer);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//                // if the data is not added or it is cancelled
-//            }
-//        });
-
-
         FirebaseDatabase.getInstance(" https://assignment2-fba50-default-rtdb.asia-southeast1.firebasedatabase.app")
                 .getReference("QuestionAnswers")
                 .child(id)
@@ -184,17 +177,12 @@ public class Database {
                     @Override
                     public void onComplete (@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            //Toast.makeText(Home.this, "User has been registered successfully!", Toast.LENGTH_LONG).show();
-                            //progressBar.setVisibility(View.GONE);
-                            //startActivity(new Intent(Home.this, Login.class));
+                            ;
                         } else {
-                            //Toast.makeText(Home.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
-                            //progressBar.setVisibility(View.GONE);
+                            ;
                         }
                     }
                 });
-
-
     }
 
     //one time call this method to generate the pool list into database
@@ -205,9 +193,31 @@ public class Database {
         numeracyQA.setQuestion("5*2");
         numeracyQA.setAnswer("10");
         //not required to set answer choices for numeracy since no answer choices required
-
         addQuestionAnswer(numeracyQA, "1");
 
+        numeracyQA.setArea("Numeracy");
+        numeracyQA.setQuestion("8/4");
+        numeracyQA.setAnswer("2");
+        //not required to set answer choices for numeracy since no answer choices required
+        addQuestionAnswer(numeracyQA, "2");
+
+        numeracyQA.setArea("Numeracy");
+        numeracyQA.setQuestion("12+24");
+        numeracyQA.setAnswer("36");
+        //not required to set answer choices for numeracy since no answer choices required
+        addQuestionAnswer(numeracyQA, "3");
+
+        numeracyQA.setArea("Numeracy");
+        numeracyQA.setQuestion("102-84");
+        numeracyQA.setAnswer("18");
+        //not required to set answer choices for numeracy since no answer choices required
+        addQuestionAnswer(numeracyQA, "4");
+
+        numeracyQA.setArea("Numeracy");
+        numeracyQA.setQuestion("36/8");
+        numeracyQA.setAnswer("4");
+        //not required to set answer choices for numeracy since no answer choices required
+        addQuestionAnswer(numeracyQA, "5");
 
 
         //set question answer for history
@@ -217,7 +227,14 @@ public class Database {
         historyQA.setAnswer("Stamford Raffles");
         historyQA.setAnswerChoices("Stamford Raffles, Regina, Jeremy, Florine, Asamimi");
 
-        addQuestionAnswer(historyQA,"2");
+        addQuestionAnswer(historyQA,"16");
+
+        historyQA.setArea("History");
+        historyQA.setQuestion("Who is founder of Coogie Run");
+        historyQA.setAnswer("Regina");
+        historyQA.setAnswerChoices("Anemimi, Regina, BAD4, FattyBomBom, Asamimi");
+
+        addQuestionAnswer(historyQA,"17");
     }
 
 }
