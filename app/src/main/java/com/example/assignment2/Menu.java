@@ -24,6 +24,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 import org.w3c.dom.Text;
 
+import java.util.List;
+
 public class Menu extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth mAuth;
@@ -34,11 +36,25 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
     private Button myButton;
 
     private TextView myTextView;
+    private TextView myTextView1;
+    private String usernameTextView;
+    TextView totalPointsTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        List<Attempt> attemptList = Database.getInstance().getAttemptList();
+
+        //sum all previous attempt points
+        int overallPoints = attemptList.stream()
+                .map(x -> x.getPoint())
+                .reduce(0, (a, b) -> a + b);
+
+        System.out.println("@overall points: " + String.valueOf(overallPoints));
+
+
+        usernameTextView = (Database.getInstance().getCurrentUser().getUserName());
 
         ib = (ImageButton) findViewById(R.id.numeracyButton);
         ib.setOnClickListener(this);
@@ -51,37 +67,42 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
 
         myTextView = (TextView) findViewById(R.id.signOutButton);
 
-//        myTextView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view1) {
-//                AlertDialog.Builder builder = new AlertDialog.Builder(Menu.this);
-//                builder.setTitle("Username, you have overall 120 points");
-//
-//                // Set up the input
-//                //final EditText input = new EditText(Menu.this);
-//                // Specify the type of input expected
-//                //input.setInputType(InputType.TYPE_CLASS_NUMBER);
-//                //builder.setView(input);
-//
-//                // Set up the buttons
-//                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        Intent intent3 = new Intent(Menu.this, Home.class);
-//                        startActivity(intent3);
-//                    }
-//                });
-//                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        dialog.cancel();
-//                    }
-//                });
-//
-//                builder.show();
-//
-//            }
-//        });
+        myTextView1 = (TextView) findViewById(R.id.changepwbutton);
+        myTextView1.setOnClickListener(this);
+
+        //int finalOverallPoints = overallPoints;
+        myTextView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view1) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(Menu.this);
+                builder.setTitle(usernameTextView+ ", you have a total of " +String.valueOf(overallPoints)+" points. You will now be logged out.");
+
+                // Set up the input
+                //final EditText input = new EditText(Menu.this);
+                // Specify the type of input expected
+                //input.setInputType(InputType.TYPE_CLASS_NUMBER);
+                //builder.setView(input);
+
+                // Set up the buttons
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent3 = new Intent(Menu.this, Login.class);
+                        startActivity(intent3);
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                builder.show();
+
+            }
+        });
 
         usernameMenuTextView = (TextView) findViewById(R.id.usernameMenu);
         usernameMenuTextView.setText(Database.getInstance().getCurrentUser().getUserName());
@@ -107,10 +128,9 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
                 Intent intent2 = new Intent(Menu.this, Profile.class);
                 startActivity(intent2);
                 break;
-            case R.id.signOutButton:
-                //Toast.makeText(Menu.this, "historyButton button pressed", Toast.LENGTH_LONG).show();
-                //Intent intent3 = new Intent(Menu.this, Home.class);
-                //startActivity(intent3);
+            case R.id.changepwbutton:
+                Intent intent3 = new Intent(Menu.this, Password.class);
+                startActivity(intent3);
                 break;
         }
     }
