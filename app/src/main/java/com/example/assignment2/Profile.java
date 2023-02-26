@@ -32,6 +32,11 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         pointsTextView = (TextView) findViewById(R.id.points);
         pointsTextView.setText(String.valueOf(overallPoints));
 
+        //sort by date
+        //attemptList.sort( (a1, a2) -> a1.getDateTime().compareTo(a2.getDateTime()));
+        //sort by area
+        //attemptList.sort( (a1, a2) -> a1.getArea().compareTo(a2.getArea()));
+
         LinearLayout parentLayout = (LinearLayout)findViewById(R.id.linearLayout);
         for (Attempt a : attemptList) {
 
@@ -45,6 +50,9 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
             pointsTextView.setText("- Points earned : " + String.valueOf(a.getPoint()) + "\n");
             parentLayout.addView(pointsTextView);
         }
+
+
+
 
     }
 
