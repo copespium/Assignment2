@@ -32,7 +32,6 @@ public class Database {
     DatabaseReference questionAnswerRef = FirebaseDatabase.getInstance(" https://assignment2-fba50-default-rtdb.asia-southeast1.firebasedatabase.app")
             .getReference("QuestionAnswers");
 
-    private static ArrayList<User> userList = new ArrayList<>();
     private static ArrayList<Attempt> attemptList = new ArrayList<>();
 
     private static ArrayList<QuestionAnswer> questionAnswerList = new ArrayList<>();
