@@ -47,26 +47,26 @@ public class Database {
 
         mAuth = FirebaseAuth.getInstance();
 
-//        questionAnswerRef.orderByValue().addChildEventListener(new ChildEventListener() {
-//            @Override
-//            public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
-//                QuestionAnswer questionAnswer = dataSnapshot.getValue(QuestionAnswer.class);
-//                questionAnswerList.add(questionAnswer);
-//                System.out.println("@Printing all Question Answer: " + questionAnswerList);
-//            }
-//            @Override
-//            public void onChildChanged(DataSnapshot dataSnapshot, String prevChildKey) {}
-//
-//            @Override
-//            public void onChildRemoved(DataSnapshot dataSnapshot) {}
-//
-//            @Override
-//            public void onChildMoved(DataSnapshot dataSnapshot, String prevChildKey) {}
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {}
-//            // ...
-//        });
+        questionAnswerRef.orderByValue().addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
+                QuestionAnswer questionAnswer = dataSnapshot.getValue(QuestionAnswer.class);
+                questionAnswerList.add(questionAnswer);
+                System.out.println("@Printing all Question Answer: " + questionAnswerList);
+            }
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String prevChildKey) {}
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {}
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String prevChildKey) {}
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+            // ...
+        });
 
 //        usersRef.orderByValue().addChildEventListener(new ChildEventListener() {
 //            @Override
@@ -90,7 +90,8 @@ public class Database {
 //            public void onCancelled(DatabaseError databaseError) {}
 //            // ...
 //        });
-        generateQuestionPoolList();
+
+        //generateQuestionPoolList();
 
     }
 
