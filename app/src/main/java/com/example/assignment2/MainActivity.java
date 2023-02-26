@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 finishscreen();
             }
         };
+        Database.getInstance().init();
         Timer t = new Timer();
         t.schedule(task, 3000);
     }
