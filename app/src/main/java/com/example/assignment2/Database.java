@@ -98,7 +98,10 @@ public class Database {
 
     public void loadCurrentUserAttempts(){
 
-        attemptsRef.orderByValue().addChildEventListener(new ChildEventListener() {
+        attemptList.clear();
+
+        attemptsRef.child(mAuth.getCurrentUser().getUid())
+                .orderByValue().addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
                 Attempt attempt = dataSnapshot.getValue(Attempt.class);
