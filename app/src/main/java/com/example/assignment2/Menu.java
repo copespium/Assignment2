@@ -51,37 +51,37 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
 
         myTextView = (TextView) findViewById(R.id.signOutButton);
 
-        myTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view1) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(Menu.this);
-                builder.setTitle("Username, you have overall 120 points");
-
-                // Set up the input
-                //final EditText input = new EditText(Menu.this);
-                // Specify the type of input expected
-                //input.setInputType(InputType.TYPE_CLASS_NUMBER);
-                //builder.setView(input);
-
-                // Set up the buttons
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Intent intent3 = new Intent(Menu.this, Home.class);
-                        startActivity(intent3);
-                    }
-                });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-
-                builder.show();
-
-            }
-        });
+//        myTextView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view1) {
+//                AlertDialog.Builder builder = new AlertDialog.Builder(Menu.this);
+//                builder.setTitle("Username, you have overall 120 points");
+//
+//                // Set up the input
+//                //final EditText input = new EditText(Menu.this);
+//                // Specify the type of input expected
+//                //input.setInputType(InputType.TYPE_CLASS_NUMBER);
+//                //builder.setView(input);
+//
+//                // Set up the buttons
+//                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        Intent intent3 = new Intent(Menu.this, Home.class);
+//                        startActivity(intent3);
+//                    }
+//                });
+//                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        dialog.cancel();
+//                    }
+//                });
+//
+//                builder.show();
+//
+//            }
+//        });
 
         usernameMenuTextView = (TextView) findViewById(R.id.usernameMenu);
         usernameMenuTextView.setText(Database.getInstance().getCurrentUser().getUserName());

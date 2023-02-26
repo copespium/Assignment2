@@ -61,8 +61,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="35dp"
-            android:layout_marginRight="35dp"
             android:layout_marginTop="80dp"
-            android:text="The questions asked will be addition, subtraction, multiplication, or  division of 2 numbers. The user should insert/enter the answer in the corresponding text field." />
+            android:layout_marginRight="35dp"
+            android:text="The questions asked will be addition, subtraction, multiplication, or  division of 2 numbers. The user should insert/enter the answer in the corresponding text field."
+            android:textSize="16sp" />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

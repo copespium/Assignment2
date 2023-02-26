@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 // TODO Auto-generated method stub
-                Intent intent = new Intent(MainActivity.this, Home.class);
+                Intent intent = new Intent(MainActivity.this, Login.class);
                 startActivity(intent);
                 finishscreen();
             }

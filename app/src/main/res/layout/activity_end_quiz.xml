@@ -6,36 +6,177 @@
     android:layout_height="match_parent"
     tools:context=".endQuiz">
 
-    <TextView
-        android:id="@+id/congratz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Well done"
-        tools:layout_editor_absoluteX="101dp"
-        tools:layout_editor_absoluteY="233dp" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="257dp"
+        android:layout_height="99dp"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.779"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.098">
+
+        <TextView
+            android:id="@+id/congratz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:text="Well done"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/congratz1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="15dp"
+            android:text="You have finished the                                  quiz. See how you did and your total score below!"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/usernameQuiz" />
+
+        <TextView
+            android:id="@+id/usernameQuiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="85dp"
+            android:text="usernameQuiz"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/endQuizName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginRight="15dp"
+            android:text="endQuizName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.665"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/usernameQuiz" />
+    </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/congratz1"
+        android:id="@+id/noOfCorrect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="You have finished the                                  quiz"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="287dp" />
-
-    <TextView
-        android:id="@+id/usernameQuiz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="usernameQuiz"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="52dp"
+        android:text="0"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="174dp"
-        tools:layout_editor_absoluteY="225dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <TextView
-        android:id="@+id/endQuizName"
+        android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="endQuizName"
-        tools:layout_editor_absoluteX="215dp"
-        tools:layout_editor_absoluteY="287dp" />
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="152dp"
+        android:text="Correct"
+        android:textColor="#4CAF50"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <TextView
+        android:id="@+id/noOfinCorrect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="16dp"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="140dp"
+        android:text="Incorrect"
+        android:textColor="#AF4C4C"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="You are rewarded"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+    <TextView
+        android:id="@+id/pointsAttempt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="pointsAttempt"
+        android:textColor="#4CAF50"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="You have an overall of "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pointsAttempt" />
+
+    <TextView
+        android:id="@+id/pointsOverall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="pointsOverall"
+        android:textAllCaps="false"
+        android:textColor="#673AB7"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="239dp"
+        android:layout_height="155dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="220dp"
+        android:background="#0000"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/stevejobs" />
+
+    <Button
+        android:id="@+id/buttonConfirm"
+        android:layout_width="225dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="52dp"
+        android:text="Confirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pointsOverall" />
 </androidx.constraintlayout.widget.ConstraintLayout>
