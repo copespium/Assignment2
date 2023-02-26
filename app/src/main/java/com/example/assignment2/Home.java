@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -41,6 +42,14 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
 
         signUpButton = (Button) findViewById(R.id.signUpButton);
         signUpButton.setOnClickListener(this);
+
+        TextView myLogin = (TextView) findViewById(R.id.textLogin);
+        myLogin.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(Home.this, Login.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

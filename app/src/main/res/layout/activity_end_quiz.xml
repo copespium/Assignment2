@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".endQuiz">
+
+    <TextView
+        android:id="@+id/congratz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Well done"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="233dp" />
+
+    <TextView
+        android:id="@+id/congratz1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You have finished the                                  quiz"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="287dp" />
+
+    <TextView
+        android:id="@+id/usernameQuiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="usernameQuiz"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="225dp" />
+
+    <TextView
+        android:id="@+id/endQuizName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="endQuizName"
+        tools:layout_editor_absoluteX="215dp"
+        tools:layout_editor_absoluteY="287dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

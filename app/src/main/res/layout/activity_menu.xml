@@ -7,32 +7,32 @@
     tools:context=".Menu">
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/numeracyButton"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="40dp"
         android:adjustViewBounds="true"
+        android:background="#0000"
         android:scaleType="centerInside"
         android:src="@drawable/numeracy"
-        android:background="#0000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pickText" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <ImageButton
         android:id="@+id/historyButton"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="52dp"
         android:adjustViewBounds="true"
         android:background="#0000"
         android:scaleType="centerInside"
         android:src="@drawable/history"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toStartOf="@+id/numeracyButton"
+        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pickText" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <TextView
         android:id="@+id/MenuText"
@@ -46,27 +46,91 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/pickText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="Pick your quiz"
+    <Button
+        android:id="@+id/profilebutton"
+        android:layout_width="213dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="52dp"
+        android:backgroundTint="#7866D6"
+        android:text="Check quiz history"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MenuText" />
+        app:layout_constraintTop_toBottomOf="@+id/historyButton" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="51dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="24dp"
-        android:background="#0000"
-        android:scaleType="fitCenter"
+    <Button
+        android:id="@+id/changepwbutton"
+        android:layout_width="213dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#7866D6"
+        android:text="Change password"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.661"
-        app:layout_constraintStart_toEndOf="@+id/MenuText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilebutton" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="186dp"
+        android:layout_height="119dp"
+        android:layout_marginTop="16dp"
+        android:background="#0000"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MenuText"
+        app:srcCompat="@drawable/stevejobs" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="242dp"
+        android:layout_height="97dp"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.822"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/myavatar" />
+        app:layout_constraintVertical_bias="0.146">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Welcome, " />
+
+        <TextView
+            android:id="@+id/usernameMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:text="usernameMenu" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:text="Please select a quiz to take from the 2 quizes below whenever you are ready. Good luck!" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/signOutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Sign Out"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
