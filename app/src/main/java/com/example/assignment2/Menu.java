@@ -29,6 +29,8 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth mAuth;
     private ImageButton ib;
 
+    private TextView usernameMenuTextView;
+
     private Button myButton;
 
     private TextView myTextView;
@@ -81,6 +83,8 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
             }
         });
 
+        usernameMenuTextView = (TextView) findViewById(R.id.usernameMenu);
+        usernameMenuTextView.setText(Database.getInstance().getCurrentUser().getUserName());
     }
 
     @Override
@@ -147,4 +151,4 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
                     }
                 });
     }
-    }
+}
