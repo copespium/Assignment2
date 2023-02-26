@@ -89,6 +89,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                     public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
                                 Toast.makeText(Login.this, "Login is successful!", Toast.LENGTH_LONG).show();
+                                Database.getInstance().loadCurrentUserAttempts();
                                 startActivity(new Intent(Login.this, Menu.class));
                                 progressBar2.setVisibility(View.GONE);
                             } else {
