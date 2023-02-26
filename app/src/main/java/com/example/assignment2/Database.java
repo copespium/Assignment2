@@ -75,14 +75,9 @@ public class Database {
             public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
                 User user = dataSnapshot.getValue(User.class);
                 String UID = dataSnapshot.getKey();
-                //System.out.println("The " + dataSnapshot.getKey() + " user details is " + dataSnapshot.getValue());
-                //System.out.println("Username: " + user.getUserName() + "email: " + user.getEmail());
 
                 if (userIsLoggedIn() && UID.equalsIgnoreCase(mAuth.getCurrentUser().getUid()))
                     currentUser = user;
-
-                //userList.add(user);
-                //System.out.println("@Printing all users: " + userList);
             }
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String prevChildKey) {}
@@ -133,8 +128,9 @@ public class Database {
         return mAuth.getCurrentUser() != null;
     }
 
-
-    //mAuth.signOut();
+    public void signOut(){
+        mAuth.signOut();
+    }
 
     public User getCurrentUser(){
         return currentUser;
@@ -219,22 +215,159 @@ public class Database {
         //not required to set answer choices for numeracy since no answer choices required
         addQuestionAnswer(numeracyQA, "5");
 
+        numeracyQA.setArea("Numeracy");
+        numeracyQA.setQuestion("100/5");
+        numeracyQA.setAnswer("20");
+        //not required to set answer choices for numeracy since no answer choices required
+        addQuestionAnswer(numeracyQA, "6");
+
+        numeracyQA.setArea("Numeracy");
+        numeracyQA.setQuestion("80*5");
+        numeracyQA.setAnswer("400");
+        //not required to set answer choices for numeracy since no answer choices required
+        addQuestionAnswer(numeracyQA, "7");
+
+        numeracyQA.setArea("Numeracy");
+        numeracyQA.setQuestion("100*5");
+        numeracyQA.setAnswer("500");
+        //not required to set answer choices for numeracy since no answer choices required
+        addQuestionAnswer(numeracyQA, "8");
+
+        numeracyQA.setArea("Numeracy");
+        numeracyQA.setQuestion("21/7");
+        numeracyQA.setAnswer("3");
+        //not required to set answer choices for numeracy since no answer choices required
+        addQuestionAnswer(numeracyQA, "9");
+
+        numeracyQA.setArea("Numeracy");
+        numeracyQA.setQuestion("242+20");
+        numeracyQA.setAnswer("262");
+        //not required to set answer choices for numeracy since no answer choices required
+        addQuestionAnswer(numeracyQA, "10");
+
+        numeracyQA.setArea("Numeracy");
+        numeracyQA.setQuestion("58-7");
+        numeracyQA.setAnswer("51");
+        //not required to set answer choices for numeracy since no answer choices required
+        addQuestionAnswer(numeracyQA, "11");
+
+        numeracyQA.setArea("Numeracy");
+        numeracyQA.setQuestion("123-3");
+        numeracyQA.setAnswer("120");
+        //not required to set answer choices for numeracy since no answer choices required
+        addQuestionAnswer(numeracyQA, "12");
+
+        numeracyQA.setArea("Numeracy");
+        numeracyQA.setQuestion("36/6");
+        numeracyQA.setAnswer("6");
+        //not required to set answer choices for numeracy since no answer choices required
+        addQuestionAnswer(numeracyQA, "13");
+
+        numeracyQA.setArea("Numeracy");
+        numeracyQA.setQuestion("108*2");
+        numeracyQA.setAnswer("216");
+        //not required to set answer choices for numeracy since no answer choices required
+        addQuestionAnswer(numeracyQA, "14");
+
+        numeracyQA.setArea("Numeracy");
+        numeracyQA.setQuestion("400+1");
+        numeracyQA.setAnswer("401");
+        //not required to set answer choices for numeracy since no answer choices required
+        addQuestionAnswer(numeracyQA, "15");
+
 
         //set question answer for history
         QuestionAnswer historyQA = new QuestionAnswer();
         historyQA.setArea("History");
         historyQA.setQuestion("Who is founder of Singapore");
         historyQA.setAnswer("Stamford Raffles");
-        historyQA.setAnswerChoices("Stamford Raffles, Regina, Jeremy, Florine, Asamimi");
-
+        historyQA.setAnswerChoices("Stamford Raffles,Regina,Jeremy,Florine,Asamimi");
         addQuestionAnswer(historyQA,"16");
 
         historyQA.setArea("History");
         historyQA.setQuestion("Who is founder of Coogie Run");
         historyQA.setAnswer("Regina");
-        historyQA.setAnswerChoices("Anemimi, Regina, BAD4, FattyBomBom, Asamimi");
-
+        historyQA.setAnswerChoices("Anemimi,Regina,BAD4,FattyBomBom,Asamimi");
         addQuestionAnswer(historyQA,"17");
+
+        historyQA.setArea("History");
+        historyQA.setQuestion("When did Singapore gain its independence");
+        historyQA.setAnswer("1965");
+        historyQA.setAnswerChoices("1965,1900,2010,1955,1982");
+        addQuestionAnswer(historyQA,"18");
+
+        historyQA.setArea("History");
+        historyQA.setQuestion("What was Singapore originally known as?");
+        historyQA.setAnswer("Temasek");
+        historyQA.setAnswerChoices("Temasek,Johor Lama,Palembang,It had no name,Utama");
+        addQuestionAnswer(historyQA,"19");
+
+        historyQA.setArea("History");
+        historyQA.setQuestion("Who was Singapore's first Prime Minister?");
+        historyQA.setAnswer("Lee Kuan Yew");
+        historyQA.setAnswerChoices("Goh Chok Tong,Singapore does not have a Prime Minister,Lee Hsien Loong,Lee Kuan Yew,Lee Xiao Long");
+        addQuestionAnswer(historyQA,"20");
+
+        historyQA.setArea("History");
+        historyQA.setQuestion("Q6");
+        historyQA.setAnswer("A");
+        historyQA.setAnswerChoices("A,B,C,D,E");
+        addQuestionAnswer(historyQA,"21");
+
+        historyQA.setArea("History");
+        historyQA.setQuestion("Q7");
+        historyQA.setAnswer("B");
+        historyQA.setAnswerChoices("A,B,C,D,E");
+        addQuestionAnswer(historyQA,"22");
+
+        historyQA.setArea("History");
+        historyQA.setQuestion("Q8");
+        historyQA.setAnswer("C");
+        historyQA.setAnswerChoices("A,B,C,D,E");
+        addQuestionAnswer(historyQA,"23");
+
+        historyQA.setArea("History");
+        historyQA.setQuestion("Q9");
+        historyQA.setAnswer("D");
+        historyQA.setAnswerChoices("A,B,C,D,E");
+        addQuestionAnswer(historyQA,"24");
+
+        historyQA.setArea("History");
+        historyQA.setQuestion("Q10");
+        historyQA.setAnswer("E");
+        historyQA.setAnswerChoices("A,B,C,D,E");
+        addQuestionAnswer(historyQA,"25");
+
+        historyQA.setArea("History");
+        historyQA.setQuestion("Q11");
+        historyQA.setAnswer("A");
+        historyQA.setAnswerChoices("A,B,C,D,E");
+        addQuestionAnswer(historyQA,"26");
+
+        historyQA.setArea("History");
+        historyQA.setQuestion("Q12");
+        historyQA.setAnswer("B");
+        historyQA.setAnswerChoices("A,B,C,D,E");
+        addQuestionAnswer(historyQA,"27");
+
+        historyQA.setArea("History");
+        historyQA.setQuestion("Q13");
+        historyQA.setAnswer("C");
+        historyQA.setAnswerChoices("A,B,C,D,E");
+        addQuestionAnswer(historyQA,"28");
+
+        historyQA.setArea("History");
+        historyQA.setQuestion("Q14");
+        historyQA.setAnswer("D");
+        historyQA.setAnswerChoices("A,B,C,D,E");
+        addQuestionAnswer(historyQA,"29");
+
+        historyQA.setArea("History");
+        historyQA.setQuestion("Q15");
+        historyQA.setAnswer("E");
+        historyQA.setAnswerChoices("A,B,C,D,E");
+        addQuestionAnswer(historyQA,"30");
+
     }
 
 }
