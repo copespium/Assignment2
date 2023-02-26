@@ -3,13 +3,14 @@ package com.example.assignment2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
 
 public class Profile extends AppCompatActivity {
 
-    private TextView usernameTextView, quizNameTextView, quizTakenDateTextView, pointsEarnedTextView;
+    private TextView usernameTextView, pointsTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,14 +18,25 @@ public class Profile extends AppCompatActivity {
 
         List<Attempt> attemptList = Database.getInstance().getAttemptList();
 
+        //sum all previous attempt points
+        int overallPoints = attemptList.stream()
+                .map(x -> x.getPoint())
+                .reduce(0, (a, b) -> a + b);
+
         usernameTextView = (TextView) findViewById(R.id.username);
         usernameTextView.setText(Database.getInstance().getCurrentUser().getUserName());
-        quizNameTextView = (TextView) findViewById(R.id.quizName);
-        quizNameTextView.setText(attemptList.get(0).getArea());
-        quizTakenDateTextView = (TextView) findViewById(R.id.quizTakenDate);
-        quizTakenDateTextView.setText(attemptList.get(0).getDateTime());
-        pointsEarnedTextView = (TextView) findViewById(R.id.pointsEarned);
-        pointsEarnedTextView.setText(attemptList.get(0).getPoint());
+        pointsTextView = (TextView) findViewById(R.id.points);
+        pointsTextView.setText(String.valueOf(overallPoints));
 
+        LinearLayout parentLayout = (LinearLayout)findViewById(R.id.linearLayout);
+        for (Attempt a : attemptList) {
+            TextView textView = new TextView(Profile.this);
+            textView.setText(a.getArea() + " area - attempt started on " + a.getDateTime());
+            parentLayout.addView(textView);
+
+            TextView pointsTextView = new TextView(Profile.this);
+            pointsTextView.setText("- points earned " + String.valueOf(a.getPoint()));
+            parentLayout.addView(pointsTextView);
+        }
     }
 }
