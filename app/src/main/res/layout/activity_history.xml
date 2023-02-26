@@ -61,9 +61,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="35dp"
-            android:layout_marginRight="35dp"
             android:layout_marginTop="80dp"
+            android:layout_marginRight="35dp"
             android:text="The following quiz will test you on history, the questions will be in multiple-choice format. There are a total of 5 questions and the user is to select 1 correct
-answer out of 5 options for each question." />
+answer out of 5 options for each question."
+            android:textSize="16sp" />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
