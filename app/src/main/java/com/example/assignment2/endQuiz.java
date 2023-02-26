@@ -18,6 +18,8 @@ public class endQuiz extends AppCompatActivity implements View.OnClickListener {
 
     TextView pointsTextView;
     TextView totalPointsTextView;
+
+    TextView quizAreaTextView;
     private Button myButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class endQuiz extends AppCompatActivity implements View.OnClickListener {
         myButton.setOnClickListener(this);
 
         Bundle extras = getIntent().getExtras();
+        String quizArea = "";
         int numberOfCorrect = 0;
         int numberOfWrong = 0;
         int pointsScored = 0;
@@ -37,6 +40,7 @@ public class endQuiz extends AppCompatActivity implements View.OnClickListener {
             numberOfWrong = extras.getInt("numberOfWrong");
             pointsScored = extras.getInt("pointsScored");
             overallPoints = extras.getInt("overallPoints");
+            quizArea = extras.getString("area");
 
             System.out.println("Number of correct: " + numberOfCorrect);
             System.out.println("Number of wrong: " + numberOfWrong);
@@ -46,6 +50,9 @@ public class endQuiz extends AppCompatActivity implements View.OnClickListener {
 
         usernameQuizTextView = (TextView) findViewById(R.id.usernameQuiz);
         usernameQuizTextView.setText(Database.getInstance().getCurrentUser().getUserName());
+
+        quizAreaTextView = (TextView) findViewById(R.id.endQuizName);
+        quizAreaTextView.setText(quizArea);
 
         correctQuizTextView = (TextView) findViewById(R.id.noOfCorrect);
         correctQuizTextView.setText(String.valueOf(numberOfCorrect));

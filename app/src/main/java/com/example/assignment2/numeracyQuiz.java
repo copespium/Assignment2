@@ -123,6 +123,7 @@ public class numeracyQuiz extends AppCompatActivity implements View.OnClickListe
         intent.putExtra("numberOfWrong",numberOfWrong);
         intent.putExtra("pointsScored",pointsScored);
         intent.putExtra("overallPoints",overallPoints);
+        intent.putExtra("area", "Numeracy");
         startActivity(intent);
     }
 }

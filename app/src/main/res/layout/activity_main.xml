@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/startingImage"
-        app:layout_constraintVertical_bias="0.183" />
+        app:layout_constraintVertical_bias="0.488" />
 
     <ImageView
         android:id="@+id/startingImage"
@@ -28,6 +28,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/bulb" />
+        app:srcCompat="@drawable/bulb" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

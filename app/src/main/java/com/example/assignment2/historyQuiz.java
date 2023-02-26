@@ -230,6 +230,7 @@ public class historyQuiz extends AppCompatActivity implements View.OnClickListen
             intent.putExtra("numberOfWrong", numberOfWrong);
             intent.putExtra("pointsScored", pointsScored);
             intent.putExtra("overallPoints", overallPoints);
+            intent.putExtra("area", "History");
             startActivity(intent);
         }
     }
