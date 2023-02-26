@@ -128,6 +128,11 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
                 Intent intent2 = new Intent(Menu.this, Profile.class);
                 startActivity(intent2);
                 break;
+            case R.id.signOutButton:
+                Database.getInstance().signOut();
+                //Toast.makeText(Menu.this, "historyButton button pressed", Toast.LENGTH_LONG).show();
+                //Intent intent3 = new Intent(Menu.this, Home.class);
+                //startActivity(intent3);
             case R.id.changepwbutton:
                 Intent intent3 = new Intent(Menu.this, Password.class);
                 startActivity(intent3);

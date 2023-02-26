@@ -124,6 +124,5 @@ public class numeracyQuiz extends AppCompatActivity implements View.OnClickListe
         intent.putExtra("pointsScored",pointsScored);
         intent.putExtra("overallPoints",overallPoints);
         startActivity(intent);
-
     }
 }
