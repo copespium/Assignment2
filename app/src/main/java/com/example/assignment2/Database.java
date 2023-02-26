@@ -279,19 +279,19 @@ public class Database {
         //set question answer for history
         QuestionAnswer historyQA = new QuestionAnswer();
         historyQA.setArea("History");
-        historyQA.setQuestion("Who is founder of Singapore");
+        historyQA.setQuestion("Who is founder of Singapore?");
         historyQA.setAnswer("Stamford Raffles");
-        historyQA.setAnswerChoices("Stamford Raffles,Regina,Jeremy,Florine,Asamimi");
+        historyQA.setAnswerChoices("Stamford Raffles,Lee Kuan Yew,Ng Teng Fong,Low Keat Hong,Regina Ng Hui Min");
         addQuestionAnswer(historyQA,"16");
 
         historyQA.setArea("History");
-        historyQA.setQuestion("Who is founder of Coogie Run");
-        historyQA.setAnswer("Regina");
-        historyQA.setAnswerChoices("Anemimi,Regina,BAD4,FattyBomBom,Asamimi");
+        historyQA.setQuestion("Where did the Olympic Games originate?");
+        historyQA.setAnswer("Greece");
+        historyQA.setAnswerChoices("Japan,Singapore,Greece,Sweden,Italy");
         addQuestionAnswer(historyQA,"17");
 
         historyQA.setArea("History");
-        historyQA.setQuestion("When did Singapore gain its independence");
+        historyQA.setQuestion("When did Singapore gain its independence?");
         historyQA.setAnswer("1965");
         historyQA.setAnswerChoices("1965,1900,2010,1955,1982");
         addQuestionAnswer(historyQA,"18");
@@ -309,63 +309,63 @@ public class Database {
         addQuestionAnswer(historyQA,"20");
 
         historyQA.setArea("History");
-        historyQA.setQuestion("Q6");
-        historyQA.setAnswer("A");
-        historyQA.setAnswerChoices("A,B,C,D,E");
+        historyQA.setQuestion("In which year did Singapore fall to the Japanese in World War Two?");
+        historyQA.setAnswer("1942");
+        historyQA.setAnswerChoices("1926,1950,1945,1940,1942");
         addQuestionAnswer(historyQA,"21");
 
         historyQA.setArea("History");
-        historyQA.setQuestion("Q7");
-        historyQA.setAnswer("B");
-        historyQA.setAnswerChoices("A,B,C,D,E");
+        historyQA.setQuestion("Who was the first Chief Minister of Singapore?");
+        historyQA.setAnswer("David Marshall");
+        historyQA.setAnswerChoices("Adam Lambert,David Marshall,Hoang Thuy Linh,Kenshi Yonezu,Shane Orok");
         addQuestionAnswer(historyQA,"22");
 
         historyQA.setArea("History");
-        historyQA.setQuestion("Q8");
-        historyQA.setAnswer("C");
-        historyQA.setAnswerChoices("A,B,C,D,E");
+        historyQA.setQuestion("Comcentre is the ginormous sky scraper headquarters of which telecom?");
+        historyQA.setAnswer("Singtel");
+        historyQA.setAnswerChoices("Starhub,M1,Singtel,MyRepublic,ViewQwest");
         addQuestionAnswer(historyQA,"23");
 
         historyQA.setArea("History");
-        historyQA.setQuestion("Q9");
-        historyQA.setAnswer("D");
-        historyQA.setAnswerChoices("A,B,C,D,E");
+        historyQA.setQuestion("The five stars represent democracy, peace, progress, justice and?");
+        historyQA.setAnswer("Equality");
+        historyQA.setAnswerChoices("Perseverence,Honesty,Respect,Diligence,Equality");
         addQuestionAnswer(historyQA,"24");
 
         historyQA.setArea("History");
-        historyQA.setQuestion("Q10");
-        historyQA.setAnswer("E");
-        historyQA.setAnswerChoices("A,B,C,D,E");
+        historyQA.setQuestion("The Merlion is a mythical creature with the head of a lion and body of what animal?");
+        historyQA.setAnswer("Fish");
+        historyQA.setAnswerChoices("Dinosaur,Bird,Orang Utan,Fish,Tiger");
         addQuestionAnswer(historyQA,"25");
 
         historyQA.setArea("History");
-        historyQA.setQuestion("Q11");
-        historyQA.setAnswer("A");
-        historyQA.setAnswerChoices("A,B,C,D,E");
+        historyQA.setQuestion("Who was Singapore's first-ever Olympic gold medalist?");
+        historyQA.setAnswer("Joseph Schooling");
+        historyQA.setAnswerChoices("Kasey Jones,Tan Jia Yi,Joseph Schooling,Adam Schools,Andy Lau");
         addQuestionAnswer(historyQA,"26");
 
         historyQA.setArea("History");
-        historyQA.setQuestion("Q12");
-        historyQA.setAnswer("B");
-        historyQA.setAnswerChoices("A,B,C,D,E");
+        historyQA.setQuestion("How many official languages does Singapore have?");
+        historyQA.setAnswer("4");
+        historyQA.setAnswerChoices("1,2,3,4,5");
         addQuestionAnswer(historyQA,"27");
 
         historyQA.setArea("History");
-        historyQA.setQuestion("Q13");
-        historyQA.setAnswer("C");
-        historyQA.setAnswerChoices("A,B,C,D,E");
+        historyQA.setQuestion("What is Singapore's main language?");
+        historyQA.setAnswer("English");
+        historyQA.setAnswerChoices("Malay,English,Chinese,Tamil,Spanish");
         addQuestionAnswer(historyQA,"28");
 
         historyQA.setArea("History");
-        historyQA.setQuestion("Q14");
-        historyQA.setAnswer("D");
-        historyQA.setAnswerChoices("A,B,C,D,E");
+        historyQA.setQuestion("What colors are on the Singapore flag?");
+        historyQA.setAnswer("Red and White");
+        historyQA.setAnswerChoices("Red and White,Blue and Purple,White and Grey,Red and Yellow,Orange and Green");
         addQuestionAnswer(historyQA,"29");
 
         historyQA.setArea("History");
-        historyQA.setQuestion("Q15");
-        historyQA.setAnswer("E");
-        historyQA.setAnswerChoices("A,B,C,D,E");
+        historyQA.setQuestion("Which country was Singapore merged with from 1963 to 1965?");
+        historyQA.setAnswer("Malaysia");
+        historyQA.setAnswerChoices("Thailand,Malaysia,Vietnam,Hong Kong,Indonesia");
         addQuestionAnswer(historyQA,"30");
 
     }
