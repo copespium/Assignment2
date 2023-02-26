@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/numeracyimage"
+        app:srcCompat="@drawable/historyimage"
         tools:ignore="MissingConstraints" />
 
     <androidx.cardview.widget.CardView
@@ -30,7 +30,7 @@
         tools:ignore="MissingConstraints">
 
         <Button
-            android:id="@+id/quizButtonNum"
+            android:id="@+id/quizButtonHis"
             android:layout_width="150dp"
             android:layout_height="60dp"
             android:layout_marginLeft="200dp"
@@ -39,7 +39,7 @@
             android:text="Start Quiz" />
 
         <Button
-            android:id="@+id/backButtonNum"
+            android:id="@+id/backButtonHis"
             android:layout_width="150dp"
             android:layout_height="60dp"
             android:layout_marginLeft="40dp"
@@ -48,11 +48,11 @@
             android:text="Back" />
 
         <TextView
-            android:id="@+id/numeracyQuizText"
+            android:id="@+id/historyQuizText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Numeracy Quiz"
-            android:layout_marginLeft="75dp"
+            android:text="History Quiz"
+            android:layout_marginLeft="105dp"
             android:layout_marginTop="20dp"
             android:textSize="34sp" />
 
@@ -63,6 +63,7 @@
             android:layout_marginLeft="35dp"
             android:layout_marginRight="35dp"
             android:layout_marginTop="80dp"
-            android:text="The questions asked will be addition, subtraction, multiplication, or  division of 2 numbers. The user should insert/enter the answer in the corresponding text field." />
+            android:text="The following quiz will test you on history, the questions should be in multiple-choice format. The user is to select 1 correct
+answer out of 5 options." />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

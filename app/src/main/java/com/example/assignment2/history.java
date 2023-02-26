@@ -6,37 +6,35 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
-public class numeracy extends AppCompatActivity implements View.OnClickListener{
+public class history extends AppCompatActivity implements View.OnClickListener{
     private Button myButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_numeracy);
+        setContentView(R.layout.activity_history);
 
-        myButton = (Button) findViewById(R.id.backButtonNum);
+        myButton = (Button) findViewById(R.id.backButtonHis);
         myButton.setOnClickListener(this);
 
-        myButton = (Button) findViewById(R.id.quizButtonNum);
+        myButton = (Button) findViewById(R.id.quizButtonHis);
         myButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.backButtonNum:
-                //Toast.makeText(numeracy.this, "numeracyBackButton button pressed", Toast.LENGTH_LONG).show();
+            case R.id.backButtonHis:
+                //Toast.makeText(history.this, "numeracyBackButton button pressed", Toast.LENGTH_LONG).show();
                 //System.out.println("numeracyButton button pressed");
-                Intent intent = new Intent(numeracy.this, Menu.class);
+                Intent intent = new Intent(history.this, Menu.class);
                 startActivity(intent);
                 break;
-
-            case R.id.quizButtonNum:
+            case R.id.quizButtonHis:
                 //Toast.makeText(numeracy.this, "numeracyBackButton button pressed", Toast.LENGTH_LONG).show();
                 //System.out.println("numeracyButton button pressed");
-                Intent intent1 = new Intent(numeracy.this, numeracyQuiz.class);
+                Intent intent1 = new Intent(history.this, historyQuiz.class);
                 startActivity(intent1);
                 break;
         }
